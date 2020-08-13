@@ -7,7 +7,10 @@ import Tracks from "./pages/Tracks/Tracks";
 import Artists from "./pages/Artists/Artists";
 import Profile from "./pages/Profile/Profile";
 import SigninSignup from "./pages/Signin-Signup/SigninSignup";
+import Signup from "./pages/Signin-Signup/Signup"
+import Sidebar from "./components/Sidebar/Sidebar";
 import NowPlaying from "./components/NowPlaying/NowPlaying";
+
 
 // CSS
 import "./App.css";
@@ -23,7 +26,9 @@ class App extends Component {
       currentTrack: "",
       index: 0,
       path: "/",
+
       featuredClicked: false,
+
     };
   }
 
@@ -32,6 +37,7 @@ class App extends Component {
       path,
     });
   };
+
   handleClick = (id, featuredClicked = false) => {
     // console.log(id);
     let { tracks } = this.state;
@@ -67,6 +73,7 @@ class App extends Component {
         return album.tracks.map((t) => t);
       });
       // console.log(artists);
+
       allTracks.forEach((track) => {
         for (let i = 0; i < track.length; i++) {
           collectedTracks.push(track[i]);
@@ -74,6 +81,7 @@ class App extends Component {
       });
       let { index } = this.state;
       let currentTrack = collectedTracks[index];
+
       this.setState({
         tracks: collectedTracks,
         currentTrack,
