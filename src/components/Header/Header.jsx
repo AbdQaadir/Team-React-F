@@ -3,7 +3,9 @@ import React from "react";
 import "./Header.css";
 
 class Header extends React.Component {
+  
   render() {
+  
     const header = this.props.header;
     const name = this.props.name;
     const description = this.props.description;

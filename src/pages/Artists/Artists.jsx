@@ -28,7 +28,6 @@ class Artists extends Component {
   }
   render() {
     const { artists } = this.state;
-    console.log(artists);
     return (
       <div className="row justify-content-center">
         <div className="col-2 px-0" id="sidebar">
