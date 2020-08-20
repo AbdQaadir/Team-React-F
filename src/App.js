@@ -134,6 +134,7 @@ class App extends Component {
               )}
             />
             <Route
+              exact
               path="/albums"
               render={(props) => (
                 <Album
@@ -156,7 +157,8 @@ class App extends Component {
               )}
             />
             <Route
-              path="/albums:albumid"
+              exact
+              path="/albums/:albumid"
               render={(props) => (
                 <AlbumTracks
                   {...props}

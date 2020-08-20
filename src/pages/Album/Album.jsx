@@ -65,7 +65,7 @@ class Album extends Component {
             <div className="row justify-content-between">
               {albumFiltered.map((album) => {
                 return (
-                  <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-10 m-2 p-2 text-center">
+                  <div className="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-10 m-2 p-2 text-center">
                     <div
                       className="album-item rounded-circle"
                       key={album.id}
