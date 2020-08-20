@@ -12,12 +12,13 @@ class Tracks extends Component {
   }
   render() {
     const { tracks, currentTrack, handleClick } = this.props;
+    console.log(currentTrack)
     return (
-      <section>
+      <section className="container">
         <div className="jumbotron jumbotron-fluid px-5">
           <h1>TRACKS</h1>
         </div>
-        <div className="row my-5 justify-content-center px-5">
+        <div className="row my-5 justify-content-center px-5" style={{width : '100%' }} >
           {tracks.map((track) => {
             return (
               <Track
@@ -35,7 +36,7 @@ class Tracks extends Component {
         </div>
         <div className="row">
           <div id="now-playing">
-            <NowPlaying currentTrack={currentTrack} />
+            {/* <NowPlaying currentTrack={currentTrack} /> */}
           </div>
         </div>
       </section>

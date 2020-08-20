@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+.px-0{
+  padding-right:  15px !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

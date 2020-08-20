@@ -92,14 +92,7 @@ class App extends Component {
       console.log(err);
     }
   }
-  albumDetail = (props) => {
-    // console.log(props);
-    return (
-      <div>
-        <h1>TOPIC DETAIL PAGE :</h1>
-      </div>
-    );
-  };
+
 
   render() {
     const {
@@ -183,7 +176,7 @@ class App extends Component {
           </Switch>
         </div>
 
-        <div className="container-fluid px-0 mt-5">
+        <div className="container-fluid px-0 mb-5">
           <div className="row justify-content-center">
             <div className="col-10 mx-auto" id="now-playing">
               <NowPlaying currentTrack={this.state.currentTrack} />

@@ -1,3 +1,17 @@
 .album-container{
     cursor: pointer;
 }
+input{
+    margin-top: .7rem;
+    height : 40px;
+    width: 250px;
+    border-radius: 50px;
+    border-style: .5px solid grey;
+    padding-left: .5rem;
+}
+
+.empty{
+    position: absolute;
+    top: 20%;
+    font-size: 40px;
+}
