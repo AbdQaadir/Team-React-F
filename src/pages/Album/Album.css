@@ -1,17 +1,26 @@
-.album-container{
-    cursor: pointer;
+/* .jumbotron-fluid {
+  background: #fff;
+} */
+.album-item {
+  cursor: pointer;
+  background-repeat: no-repeat !important;
+  background-size: cover cover !important;
+  background-position: center !important;
+  height: 200px;
+  width: 100%;
+  margin: 0 auto;
 }
-input{
-    margin-top: .7rem;
-    height : 40px;
-    width: 250px;
-    border-radius: 50px;
-    border-style: .5px solid grey;
-    padding-left: .5rem;
+input {
+  margin-top: 0.7rem;
+  height: 40px;
+  width: 250px;
+  border-radius: 50px;
+  border-style: 0.5px solid grey;
+  padding-left: 0.5rem;
 }
 
-.empty{
-    position: absolute;
-    top: 20%;
-    font-size: 40px;
+.empty {
+  font-size: 25px;
+  margin-top: 10px;
+  color: rgb(255, 0, 0);
 }
