@@ -42,3 +42,35 @@
 #active-nav {
   color: var(--pink) !important;
 }
+.custom-menu{
+  display: none;
+}
+.side{
+  display: block;
+  background: white
+}
+@media(max-width : 900px){
+  .custom-menu {
+    display: block;
+    position: fixed;
+    top: 1%;
+    right: 2%;
+    z-index: 5;
+    cursor: pointer;
+  }
+  #side{
+    margin-left: -10px;
+    background: white;
+    padding: 1rem
+  }
+  .side{
+    position: absolute;
+    margin-left: -255px;
+    z-index: 8;
+    
+  }
+  .mobile__body{
+    max-width: 100% !important;
+    flex: 0 0 100%
+  }
+}

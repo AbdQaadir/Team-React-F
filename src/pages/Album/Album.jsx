@@ -10,6 +10,7 @@ class Album extends Component {
     super();
     this.state = {
       filtered: "",
+     
     };
   }
 
@@ -22,24 +23,20 @@ class Album extends Component {
       filtered: e.target.value,
     });
   };
+
+ 
   render() {
     const { albums, history, match } = this.props;
     const albumFiltered = albums.filter((album) =>
       album.name.toLowerCase().includes(this.state.filtered.toLowerCase())
     );
-    console.log(albumFiltered);
     return (
       <div className="container-fluid">
         <div className="row">
-          <div
-            className="col-2"
-            style={{
-              background: "white",
-            }}
-          >
-            <Sidebar activePath="albums" />
+          <div className="col-2 "   style={{background: "white", padding : 0 }}>
+            <Sidebar activePath="albums" toggle={this.state.toggle} /> 
           </div>
-          <div className="col-10">
+          <div className="col-10 mobile__body">
             <div className="row">
               <div class="jumbotron jumbotron-fluid w-100">
                 <div class="container">
@@ -56,8 +53,9 @@ class Album extends Component {
                     onChange={this.handleChange}
                     placeholder="Start typing album name"
                   />
+
                   {!albumFiltered.length && (
-                    <p className="empty">Sorry! No album match your search.</p>
+                    <p className="empty">Oops! No album matches your search.</p>
                   )}
                 </div>
               </div>
@@ -69,7 +67,7 @@ class Album extends Component {
                     <div
                       className="album-item rounded-circle"
                       key={album.id}
-                      onClick={() => history.push(`${match.url}${album.id}`)}
+                      onClick={() => history.push(`${match.url}/${album.id}`)}
                       style={{ background: `url(${album.image})` }}
                     ></div>
                     <h5>
