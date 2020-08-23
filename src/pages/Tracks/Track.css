@@ -5,3 +5,21 @@
 .track {
   cursor: pointer;
 }
+
+@media(max-width : 600px){
+  .track-item{
+    width: 100%;
+    flex: 0 0 100%;
+  max-width : 100%;
+  padding-right: 0;
+  padding-left: 0;
+  }
+.section-container{
+  padding: 0;
+  margin: 0;
+}
+.track {
+  padding-left: .5rem;
+}
+}
+

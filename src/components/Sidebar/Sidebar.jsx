@@ -3,22 +3,41 @@ import { Link } from "react-router-dom";
 import Logo from "./logo.png";
 import "./Sidebar.css";
 
-const Sidebar = ({ activePath }) => {
+class Sidebar  extends React.Component {
+   constructor(props){
+     super(props)
+     this.state = {
+      toggle : false
+     }
+   } 
+   handleClick = () => {
+    this.setState({
+      toggle : !this.state.toggle
+    })
+  }
+ 
+  render(){
   return (
     <React.Fragment>
       <div className="row px-3">
+      <div className="custom-menu" onClick={this.handleClick}>
+            <button type="button" id="sidebarCollapse" className="btn btn-primary">
+                <i className="fa fa-bars"></i>
+                  <span className="sr-only">Toggle Menu</span>
+            </button>
+          </div>
+        <section id={this.state.toggle ? 'side' : '' } className="side">
         <div id="brand" className="my-3 col-12">
           <Link to="/">
             <img src={Logo} alt="" />
           </Link>
         </div>
-
         <div id="recommended" className="my-5 col-12">
           <h5 className="sidebar-heading">RECOMMENDED</h5>
           <ul className="nav-link-group list-unstyled px-0">
             <li className="nav-link">
               {" "}
-              <Link to="/" id={activePath === "/" ? "active-nav" : ""}>
+              <Link to="/" id={this.props.activePath === "/" ? "active-nav" : ""}>
                 <i className="pr-3 fab fa-searchengin"></i> Explore
               </Link>
             </li>
@@ -26,7 +45,7 @@ const Sidebar = ({ activePath }) => {
               {" "}
               <Link
                 to="/artists"
-                id={activePath === "artists" ? "active-nav" : ""}
+                id={this.props.activePath === "artists" ? "active-nav" : ""}
               >
                 <i className="pr-3 fas fa-users"></i>Artists
               </Link>{" "}
@@ -35,7 +54,7 @@ const Sidebar = ({ activePath }) => {
               {" "}
               <Link
                 to="/albums"
-                id={activePath === "albums" ? "active-nav" : ""}
+                id={this.props.activePath === "albums" ? "active-nav" : ""}
               >
                 <i className="pr-3 fas fa-compact-disc"></i> Albums
               </Link>
@@ -44,7 +63,7 @@ const Sidebar = ({ activePath }) => {
               {" "}
               <Link
                 to="/tracks"
-                id={activePath === "/tracks" ? "active-nav" : ""}
+                id={this.props.activePath === "/tracks" ? "active-nav" : ""}
               >
                 <i className="pr-3 fas fa-compact-disc"></i> Tracks
               </Link>
@@ -130,9 +149,11 @@ const Sidebar = ({ activePath }) => {
             </li>
           </ul>
         </div>
+        </section>
       </div>
     </React.Fragment>
   );
+  }
 };
 
 export default Sidebar;
